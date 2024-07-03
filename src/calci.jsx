@@ -24,10 +24,11 @@ function Calci() {
       var res = value.substring(value.indexOf("(") + 1, value.lastIndexOf(")"));
       setValue(Math.log(res).toFixed(5));
     } else if (value.includes("%")) {
-      var a = value.slice(0, -1);
-      var b = value.slice(0, 1);
-      console.log(a);
-      var res = Math.round((a * 100) / b).toFixed(3);
+      var valArr = value.substring("%");
+      var a = valArr[0];
+      var b = valArr[2];
+      console.log(a * (b / 100));
+      var res = ((a * b) / 100).toFixed(3);
       setValue(res);
     } else if (value.includes("^")) {
       var res = value.split("^");
@@ -41,6 +42,7 @@ function Calci() {
     <>
       <div className="container">
         <div className="calculator">
+          <h2>Calculator</h2>
           <form action="">
             <input type="text" className="display" value={value} />
             <div>
@@ -192,7 +194,6 @@ function Calci() {
               />
             </div>
           </form>
-          <p>{value}</p>
         </div>
       </div>
     </>

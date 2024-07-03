@@ -11,6 +11,9 @@
   border-radius: 10px;
   background-color: white;
 }
+.calculator h2 {
+  color: rgba(9, 64, 86, 0.79);
+}
 
 form input {
   height: 50px;
